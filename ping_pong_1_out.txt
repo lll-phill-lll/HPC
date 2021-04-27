@@ -1,0 +1,54 @@
+!mpic++ ping_pong.cpp -o ping_pong
+!mpirun --allow-run-as-root -n 5 ./ping_pong
+
+
+
+Rank: 0 want next: 3
+Rank: 0 count: 0 next: 3 got: 1
+Rank: 3 want next: 2
+Rank: 3 count: 1 next: 2 got: 1 0
+Rank: 3 is sending to 2 data: 1 0 3
+Rank: 2 want next: 3
+Rank: 2 count: 2 next: 3 got: 1 0 3
+Rank: 2 is sending to 3 data: 1 0 3 2
+Rank: 3 want next: 4
+Rank: 3 count: 3 next: 4 got: 1 0 3 2
+Rank: 3 is sending to 4 data: 1 0 3 2 3
+Rank: 4 want next: 2
+Rank: 4 count: 4 next: 2 got: 1 0 3 2 3
+Rank: 4 is sending to 2 data: 1 0 3 2 3 4
+Rank: 2 want next: 0
+Rank: 2 count: 5 next: 0 got: 1 0 3 2 3 4
+Rank: 2 is sending to 0 data: 1 0 3 2 3 4 2
+Rank: 0 want next: 0
+Rank: 0 want next: 0
+Rank: 0 want next: 3
+Rank: 0 count: 6 next: 3 got: 1 0 3 2 3 4 2
+Rank: 0 is sending to 3 data: 1 0 3 2 3 4 2 0
+Rank: 3 want next: 1
+Rank: 3 count: 7 next: 1 got: 1 0 3 2 3 4 2 0
+Rank: 3 is sending to 1 data: 1 0 3 2 3 4 2 0 3
+Rank: 1 want next: 3
+Rank: 1 count: 8 next: 3 got: 1 0 3 2 3 4 2 0 3
+Rank: 1 is sending to 3 data: 1 0 3 2 3 4 2 0 3 1
+Rank: 3 want next: 2
+Rank: 3 count: 9 next: 2 got: 1 0 3 2 3 4 2 0 3 1
+Rank: 3 is killing 0
+Rank: 0 want next: 3
+Rank: 3 is killing 1
+Rank: 0 count: 9 next: 3 got: 0 0 3 2 3 4 2 0 3 1
+Rank: 1 want next: 0
+Rank: 3 is killing 2
+Rank: 0 is terminating
+Rank: 1 count: 9 next: 0 got: 0 0 3 2 3 4 2 0 3 1
+Rank: 2 want next: 0
+Rank: 2 count: 9 next: 0 got: 0 0 3 2 3 4 2 0 3 1
+Rank: 2 is terminating
+Rank: 3 is killing 4
+Rank: 1 is terminating
+Rank: 4 want next: 4
+Final result:
+0 3 2 3 4 2 0 3 1
+Rank: 4 want next: 1
+Rank: 4 count: 9 next: 1 got: 0 0 3 2 3 4 2 0 3 1
+Rank: 4 is terminating
