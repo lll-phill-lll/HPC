@@ -5,6 +5,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <vector>
+#include <iostream>
 
 // base from https://github.com/mpitutorial/mpitutorial/blob/gh-pages/tutorials/mpi-send-and-receive/code/ping_pong.c
 
