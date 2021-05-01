@@ -1,0 +1,38 @@
+mpic++ -std=c++11  automata.cpp -o automata
+mpirun --allow-run-as-root -n 4 ./automata
+
+
+Input: 0 0 1 0 0 1 1 1 1 1 0 0 0 1 1 0 1
+Expected output: 0 5 8 10 13 18 23 25 23 17 11 8 10 14 16 12 1
+Elements per part: 5
+Proc: 1 data: 0 1 1 1 1 1 0
+Proc: 1 data modified: 0 2 3 3 3 2 0
+Proc: 2 data: 1 0 0 0 1 1 0
+Proc: 2 data modified: 1 1 0 1 2 2 0
+Proc: 0 data: 0 0 1 0 0 1
+Proc: 0 data modified: 0 1 1 1 1 1
+Proc: 3 data: 1 0 1 0 0 0 0
+Proc: 3 data modified: 1 2 1 0 0 0 0
+Resulting vector: 0 1 1 1 1 2 3 3 3 2 1 0 1 2 2 2 1
+-------------
+Proc: 1 data: 1 2 3 3 3 2 1
+Proc: 1 data modified: 1 6 8 9 8 6 1
+Proc: 2 data: 2 1 0 1 2 2 2
+Proc: 2 data modified: 2 3 2 3 5 6 2
+Proc: 0 data: 0 1 1 1 1 2
+Proc: 0 data modified: 0 2 3 3 4 2
+Proc: 3 data: 2 2 1 0 0 0 0
+Proc: 3 data modified: 2 5 1 0 0 0 0
+Resulting vector: 0 2 3 3 4 6 8 9 8 6 3 2 3 5 6 5 1
+-------------
+Proc: 0 data: 0 2 3 3 4 6
+Proc: 0 data modified: 0 5 8 10 13 6
+Proc: 2 data: 6 3 2 3 5 6 5
+Proc: 2 data modified: 6 11 8 10 14 16 5
+Proc: 1 data: 4 6 8 9 8 6 3
+Proc: 1 data modified: 4 18 23 25 23 17 3
+Proc: 3 data: 6 5 1 0 0 0 0
+Proc: 3 data modified: 6 12 1 0 0 0 0
+Resulting vector: 0 5 8 10 13 18 23 25 23 17 11 8 10 14 16 12 1
+-------------
+Checking expected output: correct
